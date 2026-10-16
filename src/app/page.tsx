@@ -18,7 +18,7 @@ const Scene = dynamic(() => import('@/components/3d/Scene'), {
   ssr: false,
   loading: () => (
     <div className="flex h-screen items-center justify-center bg-black text-white">
-      Chargement de la scene...
+      Chargement de la scène...
     </div>
   ),
 })
@@ -42,32 +42,32 @@ const ONBOARDING_STEPS = [
   {
     title: 'Bienvenue dans Cosmic Codex',
     description:
-      'Chaque planete represente un langage. Clique une planete pour ouvrir la bibliotheque de snippets associee.',
+      'Chaque planète représente un langage. Clique une planète pour ouvrir la bibliothèque de snippets associée.',
   },
   {
-    title: 'Bibliotheque intelligente',
+    title: 'Bibliothèque intelligente',
     description:
-      'Utilise recherche, tri, difficultes, tags et favoris pour trouver rapidement le snippet adapte a ton besoin.',
+      'Utilise recherche, tri, difficultés, tags et favoris pour trouver rapidement le snippet adapté à ton besoin.',
   },
   {
-    title: 'Confort et accessibilite',
+    title: 'Confort et accessibilité',
     description:
-      'La scene adapte ses animations selon les preferences de mouvement et les performances de ton appareil.',
+      'La scène adapte ses animations selon les préférences de mouvement et les performances de ton appareil.',
   },
 ] as const
 
 const SORT_OPTIONS: { value: SnippetSort; label: string }[] = [
   { value: 'relevance', label: 'Pertinence' },
-  { value: 'stars', label: 'Popularite' },
-  { value: 'updated', label: 'Mise a jour' },
+  { value: 'stars', label: 'Popularité' },
+  { value: 'updated', label: 'Mise à jour' },
   { value: 'title', label: 'Titre' },
 ]
 
 const DIFFICULTY_OPTIONS = [
-  { value: '', label: 'Toutes difficultes' },
-  { value: 'beginner', label: 'Debutant' },
-  { value: 'intermediate', label: 'Intermediaire' },
-  { value: 'advanced', label: 'Avance' },
+  { value: '', label: 'Toutes difficultés' },
+  { value: 'beginner', label: 'Débutant' },
+  { value: 'intermediate', label: 'Intermédiaire' },
+  { value: 'advanced', label: 'Avancé' },
 ] as const
 
 function getDefaultSnippetForm(language?: Language): NewSnippetInput {
@@ -170,7 +170,7 @@ function OnboardingOverlay({
             disabled={step === 0}
             className="rounded-3xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-35"
           >
-            Precedent
+            Précédent
           </button>
           <button
             type="button"
@@ -228,7 +228,7 @@ function MenuPanel({
                 : 'border-transparent bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
             }`}
           >
-            {page === 'explore' ? 'Explorer' : page === 'library' ? 'Bibliotheque' : 'A propos'}
+            {page === 'explore' ? 'Explorer' : page === 'library' ? 'Bibliothèque' : 'À propos'}
           </button>
         ))}
       </div>
@@ -239,7 +239,7 @@ function MenuPanel({
           onClick={resetView}
           className="w-full rounded-2xl bg-cyan-500/15 px-4 py-3 text-left text-sm font-semibold text-white transition hover:bg-cyan-500/25"
         >
-          Voir seulement les planetes
+          Voir seulement les planètes
         </button>
 
         <p className="pt-2 text-xs uppercase tracking-[0.35em] text-white/45">Mouvement</p>
@@ -247,7 +247,7 @@ function MenuPanel({
           {([
             { value: 'system', label: 'Auto' },
             { value: 'full', label: 'Normal' },
-            { value: 'reduced', label: 'Reduit' },
+            { value: 'reduced', label: 'Réduit' },
           ] as { value: MotionPreference; label: string }[]).map((item) => (
             <button
               key={item.value}
@@ -301,11 +301,11 @@ function ExploreContent({
       <div className="border border-white/10 p-6 shadow-2xl glass panel-enter">
         <p className="mb-2 text-xs uppercase tracking-[0.35em] text-cyan-300">Accueil</p>
         <h1 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-          Explore les planetes de la programmation
+          Explore les planètes de la programmation
         </h1>
         <p className="mt-4 text-base leading-7 text-white/70">
-          Parcours un univers interactif de langages et de snippets. Clique une planete pour ouvrir
-          sa bibliotheque.
+          Parcours un univers interactif de langages et de snippets. Clique une planète pour ouvrir
+          sa bibliothèque.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -314,14 +314,14 @@ function ExploreContent({
             onClick={onHideOverlay}
             className="inline-flex rounded-3xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400"
           >
-            Voir seulement les planetes
+            Voir seulement les planètes
           </button>
           <button
             type="button"
             onClick={onOpenLibrary}
             className="inline-flex rounded-3xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            Ouvrir la bibliotheque
+            Ouvrir la bibliothèque
           </button>
         </div>
 
@@ -329,13 +329,13 @@ function ExploreContent({
           <div className="rounded-3xl bg-white/5 p-4 text-white/80">
             <p className="text-sm font-semibold text-white">Recherche rapide</p>
             <p className="mt-2 text-sm text-white/70">
-              Filtre par texte, langue, difficulte et tags.
+              Filtre par texte, langue, difficulté et tags.
             </p>
           </div>
           <div className="rounded-3xl bg-white/5 p-4 text-white/80">
             <p className="text-sm font-semibold text-white">Favoris persistants</p>
             <p className="mt-2 text-sm text-white/70">
-              Tes snippets preferes restent disponibles localement.
+              Tes snippets préférés restent disponibles localement.
             </p>
           </div>
         </div>
@@ -402,7 +402,7 @@ function SnippetModal({
     try {
       await navigator.clipboard.writeText(snippet.code)
       setCopyState('success')
-      onNotify('Code copie dans le presse-papiers.', 'success')
+      onNotify('Code copié dans le presse-papiers.', 'success')
       window.setTimeout(() => setCopyState('idle'), 1600)
     } catch {
       setCopyState('error')
@@ -434,11 +434,11 @@ function SnippetModal({
       })
       setTagsInput(updated.tags.join(', '))
       setIsEditing(false)
-      setStatusMessage('Snippet mis a jour.')
-      onNotify('Snippet mis a jour.', 'success')
+      setStatusMessage('Snippet mis à jour.')
+      onNotify('Snippet mis à jour.', 'success')
     } catch (error) {
       setStatusMessage(
-        error instanceof Error ? error.message : 'Echec de mise a jour du snippet.',
+        error instanceof Error ? error.message : 'Échec de mise à jour du snippet.',
       )
     } finally {
       setIsSaving(false)
@@ -446,17 +446,17 @@ function SnippetModal({
   }
 
   const handleDelete = async () => {
-    const confirmed = window.confirm('Supprimer ce snippet ? Cette action est irreversible.')
+    const confirmed = window.confirm('Supprimer ce snippet ? Cette action est irréversible.')
     if (!confirmed) return
 
     setIsDeleting(true)
     try {
       await onDeleteSnippet(snippet.id)
-      onNotify('Snippet supprime.', 'success')
+      onNotify('Snippet supprimé.', 'success')
       onClose()
     } catch (error) {
       setStatusMessage(
-        error instanceof Error ? error.message : 'Echec de suppression du snippet.',
+        error instanceof Error ? error.message : 'Échec de suppression du snippet.',
       )
     } finally {
       setIsDeleting(false)
@@ -514,7 +514,7 @@ function SnippetModal({
               onClick={() => setIsEditing((value) => !value)}
               className="rounded-xl border border-white/20 px-3 py-2 text-sm text-white hover:bg-white/10"
             >
-              {isEditing ? 'Annuler edition' : 'Editer'}
+              {isEditing ? 'Annuler édition' : 'Éditer'}
             </button>
             <button
               type="button"
@@ -530,7 +530,7 @@ function SnippetModal({
           <span className="rounded-full bg-white/10 px-3 py-1">
             {isEditing ? draft.difficulty : snippet.difficulty}
           </span>
-          <span className="rounded-full bg-white/10 px-3 py-1">{snippet.stars} etoiles</span>
+          <span className="rounded-full bg-white/10 px-3 py-1">{snippet.stars} étoiles</span>
           <span className="rounded-full bg-white/10 px-3 py-1">
             maj {new Date(snippet.updatedAt).toLocaleDateString('fr-FR')}
           </span>
@@ -578,7 +578,7 @@ function SnippetModal({
           )}
           <span className="text-sm text-white/70" aria-live="polite">
             {copyState === 'success'
-              ? 'Copie effectuee'
+              ? 'Copie effectuée'
               : copyState === 'error'
                 ? 'Copie indisponible'
                 : statusMessage || ' '}
@@ -626,7 +626,7 @@ function SnippetModal({
               </select>
             </label>
             <label className="flex flex-col gap-2 text-sm text-white/85">
-              Difficulte
+              Difficulté
               <select
                 value={draft.difficulty}
                 onChange={(event) =>
@@ -755,7 +755,7 @@ function LibraryContent({
   const exportFavorites = useCallback(() => {
     const favoritesData = snippets.filter((snippet) => favorites.includes(snippet.id))
     if (favoritesData.length === 0) {
-      pushToast('Aucun favori a exporter.', 'error')
+      pushToast('Aucun favori à exporter.', 'error')
       return
     }
 
@@ -770,7 +770,7 @@ function LibraryContent({
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    pushToast('Favoris exportes en JSON.', 'success')
+    pushToast('Favoris exportés en JSON.', 'success')
   }, [favorites, pushToast, snippets])
 
   useEffect(() => {
@@ -819,10 +819,10 @@ function LibraryContent({
       pushToast('Nouveau snippet ajoute.', 'success')
     } catch (error) {
       setCreateError(
-        error instanceof Error ? error.message : 'Impossible de creer le snippet.',
+        error instanceof Error ? error.message : 'Impossible de créer le snippet.',
       )
       pushToast(
-        error instanceof Error ? error.message : 'Impossible de creer le snippet.',
+        error instanceof Error ? error.message : 'Impossible de créer le snippet.',
         'error',
       )
     } finally {
@@ -835,7 +835,7 @@ function LibraryContent({
       <div className="flex h-full flex-col border border-white/10 p-6 shadow-2xl glass panel-enter">
         <div className="premium-divider flex flex-col gap-4 pb-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="mb-2 text-xs uppercase tracking-[0.35em] text-purple-300">Bibliotheque</p>
+            <p className="mb-2 text-xs uppercase tracking-[0.35em] text-purple-300">Bibliothèque</p>
             <h1 className="text-3xl font-bold text-white">Snippets rapides</h1>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -895,7 +895,7 @@ function LibraryContent({
         </div>
 
         <p className="mt-3 text-base leading-7 text-white/70">
-          Recherche instantanee, tri, tags et difficultes pour trouver vite des extraits pertinents.
+          Recherche instantanée, tri, tags et difficultés pour trouver vite des extraits pertinents.
         </p>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -904,7 +904,7 @@ function LibraryContent({
             onClick={openRandomSnippet}
             className="rounded-2xl border border-cyan-300/30 bg-cyan-500/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-500/20"
           >
-            Ouvrir un snippet aleatoire (R)
+            Ouvrir un snippet aléatoire (R)
           </button>
           <button
             type="button"
@@ -928,7 +928,7 @@ function LibraryContent({
             <div className="mt-2 flex flex-wrap gap-2">
               <span className="rounded-full bg-white/10 px-3 py-1">/ : focus recherche</span>
               <span className="rounded-full bg-white/10 px-3 py-1">N : ouvrir ajout snippet</span>
-              <span className="rounded-full bg-white/10 px-3 py-1">R : snippet aleatoire</span>
+              <span className="rounded-full bg-white/10 px-3 py-1">R : snippet aléatoire</span>
               <span className="rounded-full bg-white/10 px-3 py-1">Esc : fermer modal</span>
             </div>
           </div>
@@ -1001,7 +1001,7 @@ function LibraryContent({
               </label>
 
               <label className="flex flex-col gap-2 text-sm text-white/85">
-                Difficulte
+                Difficulté
                 <select
                   value={newSnippet.difficulty}
                   onChange={(event) =>
@@ -1053,7 +1053,7 @@ function LibraryContent({
                 disabled={isSubmitting}
                 className="rounded-2xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {isSubmitting ? 'Creation...' : 'Creer le snippet'}
+                {isSubmitting ? 'Création...' : 'Créer le snippet'}
               </button>
               <button
                 type="button"
@@ -1103,7 +1103,7 @@ function LibraryContent({
           </label>
 
           <label className="flex flex-col gap-2 text-sm text-white/80">
-            Difficulte
+            Difficulté
             <select
               value={filter.difficulty ?? ''}
               onChange={(event) => {
@@ -1199,7 +1199,7 @@ function LibraryContent({
 
         <div className="mt-5 flex items-center justify-between gap-3">
           <p className="text-sm text-white/70">
-            {filtered.length} resultat{filtered.length > 1 ? 's' : ''}
+            {filtered.length} résultat{filtered.length > 1 ? 's' : ''}
           </p>
           <div className="flex flex-wrap items-center gap-2">
             {hasAdvancedFilters && (
@@ -1221,7 +1221,7 @@ function LibraryContent({
               onClick={clearFilters}
               className="rounded-2xl border border-white/20 px-4 py-2 text-sm text-white transition hover:bg-white/10"
             >
-              Reinitialiser les filtres
+              Réinitialiser les filtres
             </button>
           </div>
         </div>
@@ -1278,10 +1278,10 @@ function LibraryContent({
                         onClick={() => setActiveSnippet(snippet)}
                         className="rounded-2xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-cyan-400"
                       >
-                        Voir le detail
+                        Voir le détail
                       </button>
                       <span className="rounded-2xl bg-white/10 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/70">
-                        {snippet.stars} etoiles
+                        {snippet.stars} étoiles
                       </span>
                     </div>
                   </article>
@@ -1342,7 +1342,7 @@ function LibraryContent({
             toggleFavorite(id)
             const isNowFavorite = !favorites.includes(id)
             pushToast(
-              isNowFavorite ? 'Snippet ajoute aux favoris.' : 'Snippet retire des favoris.',
+              isNowFavorite ? 'Snippet ajouté aux favoris.' : 'Snippet retiré des favoris.',
               'info',
             )
           }}
@@ -1368,10 +1368,10 @@ function AboutContent() {
   return (
     <div className="absolute right-6 top-14 z-10 max-w-md">
       <div className="border border-white/10 p-6 shadow-2xl glass panel-enter">
-        <p className="mb-2 text-xs uppercase tracking-[0.35em] text-green-300">A propos</p>
+        <p className="mb-2 text-xs uppercase tracking-[0.35em] text-green-300">À propos</p>
         <h1 className="text-3xl font-bold text-white">Cosmic Codex</h1>
         <p className="mt-4 text-base leading-7 text-white/75">
-          Une experience frontend immersive ou chaque langage devient une planete. Le projet reste
+          Une expérience front-end immersive où chaque langage devient une planète. Le projet reste
           100% oriente interface.
         </p>
 
@@ -1379,14 +1379,14 @@ function AboutContent() {
           {[
             {
               title: 'UX moderne',
-              description: 'Navigation fluide, overlays animes et bibliotheque filtrable.',
+              description: 'Navigation fluide, overlays animés et bibliothèque filtrable.',
             },
             {
-              title: 'Accessibilite',
-              description: 'ARIA, controles clavier, mouvement reduit et contrastes lisibles.',
+              title: 'Accessibilité',
+              description: 'ARIA, contrôles clavier, mouvement réduit et contrastes lisibles.',
             },
             {
-              title: 'Scalabilite',
+              title: 'Scalabilité',
               description: 'Hooks utilitaires pour tri, tags, favoris et persistence locale.',
             },
           ].map((item) => (
@@ -1416,7 +1416,7 @@ function OverlayToggleButton({
         aria-pressed={showOverlay}
         className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
       >
-        {showOverlay ? 'Voir seulement les planetes' : 'Reafficher interface'}
+        {showOverlay ? 'Voir seulement les planètes' : 'Réafficher interface'}
       </button>
     </div>
   )

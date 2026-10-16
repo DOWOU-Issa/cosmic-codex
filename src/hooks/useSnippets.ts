@@ -150,7 +150,7 @@ export function useSnippets(initialFilter?: SnippetFilter) {
 
     if (!response.ok) {
       const payload = (await response.json().catch(() => ({}))) as { error?: string }
-      throw new Error(payload.error ?? 'Echec de creation du snippet.')
+      throw new Error(payload.error ?? 'Échec de création du snippet.')
     }
 
     const payload = (await response.json()) as { snippet: Snippet }
@@ -167,7 +167,7 @@ export function useSnippets(initialFilter?: SnippetFilter) {
 
     if (!response.ok) {
       const payload = (await response.json().catch(() => ({}))) as { error?: string }
-      throw new Error(payload.error ?? 'Echec de mise a jour du snippet.')
+      throw new Error(payload.error ?? 'Échec de mise à jour du snippet.')
     }
 
     const payload = (await response.json()) as { snippet: Snippet }
@@ -181,7 +181,7 @@ export function useSnippets(initialFilter?: SnippetFilter) {
     const response = await fetch(`/api/snippets/${id}`, { method: 'DELETE' })
     if (!response.ok) {
       const payload = (await response.json().catch(() => ({}))) as { error?: string }
-      throw new Error(payload.error ?? 'Echec de suppression du snippet.')
+      throw new Error(payload.error ?? 'Échec de suppression du snippet.')
     }
     setSnippets((prev) => prev.filter((snippet) => snippet.id !== id))
   }, [])

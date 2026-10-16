@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useUIStore } from '@/store/useUIStore'
 
@@ -6,8 +6,8 @@ type Page = 'explore' | 'library' | 'about'
 
 const links: { page: Page; label: string }[] = [
   { page: 'explore', label: 'Explorer' },
-  { page: 'library', label: 'Bibliotheque' },
-  { page: 'about', label: 'A propos' },
+  { page: 'library', label: 'Bibliothèque' },
+  { page: 'about', label: 'À propos' },
 ]
 
 export default function Navigation() {
@@ -99,11 +99,11 @@ export default function Navigation() {
           </div>
 
           <div className="mt-6 border-t border-white/10 pt-4">
-            <p className="mb-3 text-xs uppercase tracking-[0.35em] text-white/40">Apercu</p>
+            <p className="mb-3 text-xs uppercase tracking-[0.35em] text-white/40">Aperçu</p>
             <div className="grid gap-3">
-              <div className="rounded-2xl bg-white/5 p-3 text-sm text-white/80">Planetes interactives</div>
+              <div className="rounded-2xl bg-white/5 p-3 text-sm text-white/80">Planètes interactives</div>
               <div className="rounded-2xl bg-white/5 p-3 text-sm text-white/80">Snippets enrichis</div>
-              <div className="rounded-2xl bg-white/5 p-3 text-sm text-white/80">Filtres avances</div>
+              <div className="rounded-2xl bg-white/5 p-3 text-sm text-white/80">Filtres avancés</div>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ function validateInput(input: NewSnippetInput) {
   if (!input.title.trim()) throw new Error('Le titre est obligatoire.')
   if (!input.description.trim()) throw new Error('La description est obligatoire.')
   if (!input.code.trim()) throw new Error('Le code est obligatoire.')
-  if (!input.author.trim()) throw new Error('L auteur est obligatoire.')
+  if (!input.author.trim()) throw new Error('L’auteur est obligatoire.')
   if (!LANGUAGES[input.language]) throw new Error('Langage invalide.')
 }
 
@@ -92,7 +92,7 @@ export async function updateSnippet(id: string, input: UpdateSnippetInput): Prom
   if (!nextSnippet.title) throw new Error('Le titre est obligatoire.')
   if (!nextSnippet.description) throw new Error('La description est obligatoire.')
   if (!nextSnippet.code) throw new Error('Le code est obligatoire.')
-  if (!nextSnippet.author) throw new Error('L auteur est obligatoire.')
+  if (!nextSnippet.author) throw new Error('L’auteur est obligatoire.')
 
   snippets[index] = nextSnippet
   await writeSnippets(snippets)

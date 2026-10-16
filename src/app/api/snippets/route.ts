@@ -11,7 +11,7 @@ export async function GET() {
     return Response.json({ snippets })
   } catch {
     return Response.json(
-      { error: 'Impossible de recuperer les snippets.' },
+      { error: 'Impossible de récupérer les snippets.' },
       { status: 500 },
     )
   }
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     return Response.json({ snippet }, { status: 201 })
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Requete invalide.'
+    const message = error instanceof Error ? error.message : 'Requête invalide.'
     return Response.json({ error: message }, { status: 400 })
   }
 }

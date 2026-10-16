@@ -15,7 +15,7 @@ export async function PUT(
     const snippet = await updateSnippet(id, payload)
     return Response.json({ snippet })
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Requete invalide.'
+    const message = error instanceof Error ? error.message : 'Requête invalide.'
     const status = message.includes('introuvable') ? 404 : 400
     return Response.json({ error: message }, { status })
   }
@@ -30,7 +30,7 @@ export async function DELETE(
     await deleteSnippet(id)
     return Response.json({ success: true })
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Requete invalide.'
+    const message = error instanceof Error ? error.message : 'Requête invalide.'
     const status = message.includes('introuvable') ? 404 : 400
     return Response.json({ error: message }, { status })
   }
